@@ -110,6 +110,6 @@ Método para la realización de pruebas funcionales (al parecer las divisiones e
 ```  
 ![image](https://user-images.githubusercontent.com/44543081/58162996-7a8afd80-7c83-11e9-8d9d-48bfed1817ed.png)  
   
- **Al no existir interrelación entre lós métodos de la clase Calculando no veo forma de hacer pruebas de integración ni de regresión
+ **Al no existir interrelación entre lós métodos de la clase Calculando no veo forma de hacer pruebas de integración ni de regresión**
 
 
