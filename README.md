@@ -84,3 +84,30 @@ public class TestCalculando {
     // Al no existir interrelación entre lós métodos de la clase Calculando no veo forma de hacer pruebas de integración ni de regresión
 }
 ```
+Se modifica temporalmente el código de calculando para hacer las pruebas unitarias, en este caso sería la de suma (add).  
+![image](https://user-images.githubusercontent.com/44543081/58162046-b45b0480-7c81-11e9-8f84-c17fddea19b3.png)  
+Se comprueba si se detecta el error.  
+![image](https://user-images.githubusercontent.com/44543081/58162177-f08e6500-7c81-11e9-925f-422551968410.png)  
+
+Método para la realicación de las pruebas de sistema: 
+```Java
+    @Test
+    public void testSistema(){
+        //Prueba de sistema (quizá podría servir como prueba de regresión)
+        double numeroFinal = ((153.23 + 225.45 - 124.37 )* 25.41 )/ 50.43;
+        assertEquals("Prueba de Sistema fallida",numeroFinal, calc.divide(calc.multiply(calc.subtract(calc.add(153.23, 225.45),124.37),25.41),50.43),0.0001);
+    }
+```  
+Método para la realización de pruebas funcionales (al parecer las divisiones entre cero como resultado de una división entre 0 no devuelve un error por lo que me vi forzado a igualarlo a Double.POSITIVE_INFINITY.  
+```Java
+     @Test
+    public void testFuncional(){
+        //Prueba de división entre 0 (En Java 8.0 
+        if (calc.divide(56156165156.1234,0) == Double.POSITIVE_INFINITY){
+            fail("Error de división entre 0");
+        }
+    }
+```  
+![image](https://user-images.githubusercontent.com/44543081/58162996-7a8afd80-7c83-11e9-8d9d-48bfed1817ed.png)
+
+
